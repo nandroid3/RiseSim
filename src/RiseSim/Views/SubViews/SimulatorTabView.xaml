@@ -128,6 +128,9 @@
             </DataGrid.ContextMenu>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="防御" Binding="{Binding Maxdef, Mode=OneWay}" />
+				<DataGridTextColumn Header="錬成pt" Binding="{Binding AugmentationCost, Mode=OneWay}" />
+				<DataGridTextColumn Header="錬成最大防御" Binding="{Binding AugmentationMaxdef, Mode=OneWay}" />
+				<DataGridTextColumn Header="錬成2スロ時防御" Binding="{Binding Augmentation2SlotMaxdef, Mode=OneWay}" />
                 <DataGridTextColumn Header="武器スロ" Binding="{Binding WeaponSlotDisp, Mode=OneWay}" />
                 <DataGridTextColumn Header="頭" Binding="{Binding Head.DispName, Mode=OneWay}" />
                 <DataGridTextColumn Header="胴" Binding="{Binding Body.DispName, Mode=OneWay}" />

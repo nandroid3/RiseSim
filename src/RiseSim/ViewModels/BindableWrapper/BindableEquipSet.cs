@@ -66,6 +66,16 @@ namespace RiseSim.ViewModels.BindableWrapper
         // 最大防御力
         public int Maxdef { get; set; }
 
+        // 傀異錬成初期コスト
+        public int AugmentationCost { get; set; }
+
+        // 傀異錬成後最大防御力（スキル削除しない場合）
+        public int AugmentationMaxdef { get; set; }
+
+        // 傀異錬成2スロット追加時最大防御力（スキル削除しない場合）
+        public int Augmentation2SlotMaxdef { get; set; }
+
+
         // 火耐性
         public int Fire { get; set; }
 
@@ -121,6 +131,9 @@ namespace RiseSim.ViewModels.BindableWrapper
             Name = set.Name;
             Mindef = set.Mindef;
             Maxdef = set.Maxdef;
+            AugmentationCost = set.AugmentationCost;
+            AugmentationMaxdef = set.AugmentationMaxdef;
+            Augmentation2SlotMaxdef = set.Augmentation2SlotMaxdef;
             Fire = set.Fire;
             Water = set.Water;
             Thunder = set.Thunder;

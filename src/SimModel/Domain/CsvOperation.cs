@@ -114,6 +114,9 @@ namespace SimModel.Domain
                 equip.Slot3 = Parse(line[@"スロット3"]);
                 equip.Mindef = Parse(line[@"初期防御力"]);
                 equip.Maxdef = Parse(line[@"最終防御力"], equip.Mindef); // 読み込みに失敗した場合は初期防御力と同値とみなす
+                equip.AugmentationCost = Parse(line[@"傀異錬成初期コスト"], 0); // 読み込みに失敗した場合は 0 とみなす
+                equip.AugmentationAdditionalMaxdef = equip.Maxdef + Parse(line[@"傀異錬成最大防御＋"], 0);
+                equip.Augmentation2SlotAdditionalMaxdef = equip.Maxdef + Parse(line[@"傀異錬成2スロ追加時最大防御＋"], 0);
                 equip.Fire = Parse(line[@"火耐性"]);
                 equip.Water = Parse(line[@"水耐性"]);
                 equip.Thunder = Parse(line[@"雷耐性"]);

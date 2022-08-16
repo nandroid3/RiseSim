@@ -49,6 +49,15 @@ namespace SimModel.Model
         // 最大防御力
         public int Maxdef { get; set; }
 
+        // 傀異錬成初期コスト
+        public int AugmentationCost { get; set; }
+
+        // 傀異錬成後最大追加防御力（スキル削除しない場合）
+        public int AugmentationAdditionalMaxdef { get; set; }
+
+        // 傀異錬成2スロット追加時最大追加防御力（スキル削除しない場合）
+        public int Augmentation2SlotAdditionalMaxdef { get; set; }
+
         // 火耐性
         public int Fire { get; set; }
 

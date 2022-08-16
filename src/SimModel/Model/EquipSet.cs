@@ -107,6 +107,48 @@ namespace SimModel.Model
             }
         }
 
+        // 傀異錬成初期コスト
+        public int AugmentationCost
+        {
+            get
+            {
+                int ret = 0;
+                foreach (var equip in Equipments)
+                {
+                    ret += equip.AugmentationCost;
+                }
+                return ret;
+            }
+        }
+
+        // 傀異錬成後最大防御力（スキル削除しない場合）
+        public int AugmentationMaxdef
+        {
+            get
+            {
+                int ret = 0;
+                foreach (var equip in Equipments)
+                {
+                    ret += equip.AugmentationAdditionalMaxdef;
+                }
+                return ret;
+            }
+        }
+
+        // 傀異錬成各防具2スロット追加時最大防御力（スキル削除しない場合）
+        public int Augmentation2SlotMaxdef
+        {
+            get
+            {
+                int ret = 0;
+                foreach (var equip in Equipments)
+                {
+                    ret += equip.Augmentation2SlotAdditionalMaxdef;
+                }
+                return ret;
+            }
+        }
+
         // 火耐性
         public int Fire
         {
