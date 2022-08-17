@@ -139,8 +139,9 @@
                 <DataGridTextColumn Header="水" Binding="{Binding Water, Mode=OneWay}" />
                 <DataGridTextColumn Header="雷" Binding="{Binding Thunder, Mode=OneWay}" />
                 <DataGridTextColumn Header="氷" Binding="{Binding Ice, Mode=OneWay}" />
-                <DataGridTextColumn Header="龍" Binding="{Binding Dragon, Mode=OneWay}" />
-                <DataGridTextColumn Header="装飾品" Binding="{Binding DecoNameCSV, Mode=OneWay}" />
+				<DataGridTextColumn Header="龍" Binding="{Binding Dragon, Mode=OneWay}" />
+				<DataGridTextColumn Header="空スロ" Binding="{Binding EmptySlotNum, Mode=OneWay}" />
+				<DataGridTextColumn Header="装飾品" Binding="{Binding DecoNameCSV, Mode=OneWay}" />
                 <DataGridTextColumn Header="発動スキル" Binding="{Binding SkillsDisp, Mode=OneWay}" />
             </DataGrid.Columns>
         </DataGrid>

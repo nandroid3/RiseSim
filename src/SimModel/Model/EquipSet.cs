@@ -177,6 +177,83 @@ namespace SimModel.Model
             }
         }
 
+        // 防具の空きスロット合計
+        public int EmptySlotNum
+        {
+            get
+            {
+                int[] reqSlots = { 0, 0, 0, 0 }; // 要求スロット
+                int[] hasSlots = { 0, 0, 0, 0 }; // 所持スロット
+                int[] restSlots = { 0, 0, 0, 0 }; // 空きスロット
+
+                foreach (var deco in Decos)
+                {
+                    reqSlots[deco.Slot1 - 1]++;
+                }
+                if (WeaponSlot1 > 0)
+                {
+                    hasSlots[WeaponSlot1 - 1]++;
+                }
+                if (WeaponSlot2 > 0)
+                {
+                    hasSlots[WeaponSlot2 - 1]++;
+                }
+                if (WeaponSlot3 > 0)
+                {
+                    hasSlots[WeaponSlot3 - 1]++;
+                }
+                CalcEquipHasSlot(hasSlots, Head);
+                CalcEquipHasSlot(hasSlots, Body);
+                CalcEquipHasSlot(hasSlots, Arm);
+                CalcEquipHasSlot(hasSlots, Waist);
+                CalcEquipHasSlot(hasSlots, Leg);
+                CalcEquipHasSlot(hasSlots, Charm);
+
+                // スロットのコストが重い順に、装着可能な最小空きスロットに消費していく
+                restSlots[3] = hasSlots[3] - reqSlots[3];
+                restSlots[2] = hasSlots[2] - reqSlots[2];
+                if (restSlots[2] < 0)
+                {
+                    restSlots[3] += restSlots[2];
+                    restSlots[2] = 0;
+                }
+                restSlots[1] = hasSlots[1] - reqSlots[1];
+                if (restSlots[1] < 0)
+                {
+                    restSlots[2] += restSlots[1];
+                    restSlots[1] = 0;
+                    if (restSlots[2] < 0)
+                    {
+                        restSlots[3] += restSlots[2];
+                        restSlots[2] = 0;
+                    }
+                }
+                restSlots[0] = hasSlots[0] - reqSlots[0];
+                if (restSlots[0] < 0)
+                {
+                    restSlots[1] += restSlots[0];
+                    restSlots[0] = 0;
+                    if (restSlots[1] < 0)
+                    {
+                        restSlots[2] += restSlots[1];
+                        restSlots[1] = 0;
+                        if (restSlots[2] < 0)
+                        {
+                            restSlots[3] += restSlots[2];
+                            restSlots[2] = 0;
+                        }
+                    }
+                }
+                if (restSlots[3] < 0)
+                {
+                    // 事前に装着可能判定をしてあれば本来起こらないはず（暫定で 0 を返しておく）
+                    return 0;
+                }
+
+                return restSlots[0] + restSlots[1] * 2 + restSlots[2] * 3 + restSlots[3] * 4;
+            }
+        }
+
         // スキル(リスト)
         public List<Skill> Skills
         {

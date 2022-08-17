@@ -62,7 +62,8 @@
                 <DataGridTextColumn Header="腕" Binding="{Binding Arm.DispName, Mode=OneWay}" />
                 <DataGridTextColumn Header="腰" Binding="{Binding Waist.DispName, Mode=OneWay}" />
                 <DataGridTextColumn Header="足" Binding="{Binding Leg.DispName, Mode=OneWay}" />
-                <DataGridTextColumn Header="護石" Binding="{Binding Charm.DispName, Mode=OneWay}" />
+				<DataGridTextColumn Header="護石" Binding="{Binding Charm.DispName, Mode=OneWay}" />
+				<DataGridTextColumn Header="空スロ" Binding="{Binding EmptySlotNum, Mode=OneWay}" />
                 <DataGridTextColumn Header="装飾品" Binding="{Binding DecoNameCSV, Mode=OneWay}" />
             </DataGrid.Columns>
         </DataGrid>

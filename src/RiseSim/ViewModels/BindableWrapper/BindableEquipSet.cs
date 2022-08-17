@@ -81,6 +81,9 @@ namespace RiseSim.ViewModels.BindableWrapper
         // 龍耐性
         public int Dragon { get; set; }
 
+        // 空きスロット合計数
+        public int EmptySlotNum { get; set; }
+
         // スキル(リスト)
         public ObservableCollection<BindableSkill> Skills { get; set; } = new();
 
@@ -123,6 +126,7 @@ namespace RiseSim.ViewModels.BindableWrapper
             Thunder = set.Thunder;
             Ice = set.Ice;
             Dragon = set.Dragon;
+            EmptySlotNum = set.EmptySlotNum;
             Skills = BindableSkill.BeBindableList(set.Skills);
             SimpleSetName = set.SimpleSetName;
             DecoNameCSV = set.DecoNameCSV;
