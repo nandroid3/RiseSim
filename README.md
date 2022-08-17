@@ -1,5 +1,9 @@
 # RiseSim
 
+## 注意事項
+
+このツールは https://github.com/EXXXI/RiseSim の独自拡張です。
+
 ## 概要
 
 Windows上で動くモンハンライズスキルシミュレータです
