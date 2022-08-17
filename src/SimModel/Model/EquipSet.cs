@@ -522,6 +522,11 @@ namespace SimModel.Model
                         sb.Append(skill.Description);
                     }
                 }
+                sb.Append('\n');
+                sb.Append("-----------");
+                sb.Append('\n');
+                sb.Append("空きスロット合計：");
+                sb.Append(EmptySlotNum);
                 return sb.ToString();
             }
         }
