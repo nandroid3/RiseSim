@@ -176,7 +176,7 @@
             </StackPanel>
 
             <!-- テキスト形式の装備詳細出力 -->
-            <TextBox Text="{Binding DetailSet.Value.Description, Mode=OneWay}" Grid.Row="1"/>
+            <TextBox Text="{Binding DetailSet.Value.Description, Mode=OneWay}" Grid.Row="1" TextWrapping="Wrap"/>
         </Grid>
 
     </Grid>

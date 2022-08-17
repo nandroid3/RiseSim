@@ -540,6 +540,12 @@ namespace SimModel.Model
                 sb.Append("龍:");
                 sb.Append(Dragon);
                 sb.Append('\n');
+                sb.Append("傀異錬成時 防御Max：");
+                sb.Append(AugmentationMaxdef);
+                sb.Append('\n');
+                sb.Append("各2スロ追加時 防御Max：");
+                sb.Append(Augmentation2SlotMaxdef);
+                sb.Append('\n');
                 sb.Append(Head.SimpleDescription);
                 sb.Append('\n');
                 sb.Append(Body.SimpleDescription);
